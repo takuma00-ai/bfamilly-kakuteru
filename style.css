@@ -1,0 +1,75 @@
+body{
+    background-color:#f8f5f0
+}
+h1{
+
+    text-align:center;
+    color:#333;
+    font-size:2em;
+
+}
+h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+
+    margin-bottom:30px;
+}
+button{
+    width:80%;
+    max-width:380px;
+    height:60px;
+}
+#base-list{
+    /* 縦並び*/
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+    padding:18px;
+    font-size:30px;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+/*pcのみでの押したときの変化*/
+button:hover{
+    opacity:0.8;
+}
+
+#rum{
+    background:#f8f5f0;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+#cassis{
+    background:#9b59b6;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+#gin{
+    background:#5dade2;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+#vodka{
+    background:#e8f8f5;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+#campari{
+    background:#c0392B;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+#other{
+    background:#2e8b57;
+    /*シャドウ*/
+    border-radius:12px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
