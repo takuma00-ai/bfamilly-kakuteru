@@ -1,5 +1,4 @@
-;
-}const content = document.getElementById("content");
+const content = document.getElementById("content");
 
 
 function back(){
@@ -50,7 +49,7 @@ function showRum(){
     
     const pinaColadaButton = document.getElementById("pina-colada");
     pinaColadaButton.onclick = function(){
-        showPnyaColada();
+        showPinaColada();
     }
 
     const rumCokeButton = document.getElementById("rum-coke");
@@ -93,7 +92,7 @@ function showBlueHawaii(){
         showRum();
     }
 }
-function showPnyaColada(){
+function showPinaColada(){
     content.innerHTML = `
     <h2>🍸 ピニャコラーダ</h2>
         <p>-- 30ml</p>
@@ -411,6 +410,7 @@ function showVodka(){
         showSexOnTheBeach();
     }
 }
+
 function showVodkaTonic(){
     content.innerHTML = `
     <h2>🍸 ウォッカトニック</h2>
@@ -530,6 +530,7 @@ function showCampari(){
         showSupumoni();
     }
 }
+
 function showCampariOrange(){
     content.innerHTML = `
     <h2>🍸 カンパリオレンジ</h2>
