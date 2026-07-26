@@ -1,5 +1,40 @@
 const content = document.getElementById("content");
 
+const serarch = coucument.getElementById("search");
+serarch.addEventListener("input",function(){
+    console.log(serarch.value);
+});
+
+const cocktails = [
+    "モヒート",
+    "ブルーハワイ",
+    "ピニャコラーダ",
+    "ラムコーク",
+    "ラムジンジャー",
+    "カシスオレンジ",
+    "カシスソーダ",
+    "カシスパイン",
+    "カシスグレープフルーツ",
+    "ジントニック",
+    "ジンバック",
+    "ジンリッキー",
+    "マティーニ",
+    "ウォッカトニック",
+    "モスコミュール",
+    "ブルドック",
+    "スクリュードライバー",
+    "Sex on the BEACH",
+    "カンパリオレンジ",
+    "カンパリソーダ",
+    "カンパリトニック",
+    "カンパリトニック",
+    "スプモーニー",
+    'カルアミルク'
+]
+
+const result = cocktails.filter(function(name){
+    return name.includes(serarch.value);
+});
 
 function back(){
     content.innerHTML = '';
@@ -81,10 +116,9 @@ function showMojito(){
 function showBlueHawaii(){
     content.innerHTML = `
     <h2>🍸 ブルーハワイ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ラム 30ml</p>
+        <p>ブルークキュラソー 15ml</p>
+        <p>パイナップルジュース 30ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -342,8 +376,8 @@ function showGinRicky(){
 function showMartini(){
     content.innerHTML = `
     <h2>🍸 マティーニ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
+        <p>ジン 50ml</p>
+        <p>ベルモット 10ml</p>
         <p>---</p>
         <p>---</p>
     <button id="back">← 戻る</button>
