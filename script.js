@@ -1,8 +1,17 @@
 const content = document.getElementById("content");
 
-const serarch = coucument.getElementById("search");
-serarch.addEventListener("input",function(){
-    console.log(serarch.value);
+const search = document.getElementById("search");
+
+search.addEventListener("input",function(){
+
+    console.log(search.value);
+
+    const result = cocktails.filter(function(name){
+        return name.includes(search.value);
+    });
+
+    console.log(result);
+
 });
 
 const cocktails = [
@@ -32,9 +41,6 @@ const cocktails = [
     'カルアミルク'
 ]
 
-const result = cocktails.filter(function(name){
-    return name.includes(serarch.value);
-});
 
 function back(){
     content.innerHTML = '';
