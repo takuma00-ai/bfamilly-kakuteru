@@ -6,39 +6,127 @@ search.addEventListener("input",function(){
 
     console.log(search.value);
 
-    const result = cocktails.filter(function(name){
-        return name.includes(search.value);
+    const result = cocktails.filter(function(cocktail){
+        return cocktail.name.includes(search.value);
     });
 
-    console.log(result);
+
+    let html = "";
+
+    for(let i = 0; i < result.length; i++){
+        html += `
+        <div class="cocktail-card" id="card${i}">
+            <h2>${result[i].name}</h2>
+        </div>
+        `;
+    }
+
+    content.innerHTML = html ;
+    for (let i = 0; i < result.length; i++) {
+    document.getElementById(`card${i}`).addEventListener("click", function () {
+        result[i].action();
+    });
+}
 
 });
 
 const cocktails = [
-    "モヒート",
-    "ブルーハワイ",
-    "ピニャコラーダ",
-    "ラムコーク",
-    "ラムジンジャー",
-    "カシスオレンジ",
-    "カシスソーダ",
-    "カシスパイン",
-    "カシスグレープフルーツ",
-    "ジントニック",
-    "ジンバック",
-    "ジンリッキー",
-    "マティーニ",
-    "ウォッカトニック",
-    "モスコミュール",
-    "ブルドック",
-    "スクリュードライバー",
-    "Sex on the BEACH",
-    "カンパリオレンジ",
-    "カンパリソーダ",
-    "カンパリトニック",
-    "カンパリトニック",
-    "スプモーニー",
-    'カルアミルク'
+    {
+        name:"モヒート",
+        action:showMojito
+    },
+    {
+        name:"ブルーハワイ",
+        action:showBlueHawaii
+    },
+    {
+        name:"ピニャコラーダ",
+        action:showPinaColada
+    },
+    {
+        name:"ラムコーク",
+        action:showRumCoke
+    },
+    {
+        name:"ラムジンジャー",
+        action:showRumCoke
+    },
+    {
+        name:"カシスオレンジ",
+        action:showCassisOrange
+    },
+    {
+        name:"カシスソーダ",
+        action:showCassisSoda
+    },
+    {
+        name:"カシスパイン",
+        action:showCassisPine
+    },
+    {
+        name:"カシスグレープフルーツ",
+        action:showCassisGrape
+    },
+    {
+        name:"ジントニック",
+        action:showGinTonic
+    },
+    {
+        name:"ジンバック",
+        action:showGinBack
+    },
+    {
+        name:"ジンリッキー",
+        action:showGinRicky
+    },
+    {
+        name:"マティーニ",
+        action:showMartini
+    },
+    {
+        name:"ウォッカトニック",
+        action:showVodkaTonic
+    },
+    {
+        name:"モスコミュール",
+        action:showMoscowMule
+    },
+    {
+        name:"ブルドック",
+        action:showBloodyMary
+    },
+    {
+        name:"スクリュードライバー",
+        action:showScrewdriver
+    },
+    {
+        name:"Sex on the BEACH",
+        action:showSexOnTheBeach
+    },
+    {
+        name:"カンパリオレンジ",
+        action:showCampariOrange
+    },
+    {
+        name:"カンパリソーダ",
+        action:showCampariSoda
+    },
+    {
+        name:"カンパリトニック",
+        action:showCampariSoda
+    },
+    {
+        name:"カンパリトニック",
+        action:showCampariTonic
+    },
+    {
+        name:"スプモーニー",
+        action:showSupumoni
+    },
+    {
+        name:'カルアミルク',
+        action:showKahluaMilk
+    }
 ]
 
 
@@ -108,10 +196,10 @@ function showRum(){
 function showMojito(){
     content.innerHTML = `
     <h2>🍸 モヒート</h2>
-        <p>ラム 30ml</p>
-        <p>トニックウォーター</p>
-        <p>ライム</p>
-        <p>ミント</p>
+        <p>ホワイトラム 45ml</p>
+        <p>トニックウォーター 適量</p>
+        <p>ライム 1/4</p>
+        <p>ミント 1枚</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -122,9 +210,10 @@ function showMojito(){
 function showBlueHawaii(){
     content.innerHTML = `
     <h2>🍸 ブルーハワイ</h2>
-        <p>ラム 30ml</p>
-        <p>ブルークキュラソー 15ml</p>
+        <p>ホワイトラム 30ml</p>
+        <p>ブルーキュラソー 15ml</p>
         <p>パイナップルジュース 30ml</p>
+        <p>レモンジュース 15ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -135,10 +224,9 @@ function showBlueHawaii(){
 function showPinaColada(){
     content.innerHTML = `
     <h2>🍸 ピニャコラーダ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ホワイトラム 30ml</p>
+        <p>パイナップルジュース 80ml</p>
+        <p>ココナッツミルク 30ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -149,10 +237,8 @@ function showPinaColada(){
 function showRumCoke(){
     content.innerHTML = `
     <h2>🍸 ラムコーク</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ホワイトラム 30ml-45ml</p>
+        <p>コーラ 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -163,10 +249,8 @@ function showRumCoke(){
 function showRumGinger(){
     content.innerHTML = `
     <h2>🍸 ラムジンジャー</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ホワイトラム 30-45ml</p>
+        <p>ジンジャーエール 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -231,10 +315,8 @@ function showCassis(){
 function showCassisOrange(){
     content.innerHTML = `
     <h2>🍸 カシスオレンジ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カシス 30ml</p>
+        <p>オレンジジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -245,10 +327,8 @@ function showCassisOrange(){
 function showCassisSoda(){
     content.innerHTML = `
     <h2>🍸 カシスソーダ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カシス 30ml</p>
+        <p>トニックウォーター（炭酸水) 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -259,10 +339,8 @@ function showCassisSoda(){
 function showCassisPine(){
     content.innerHTML = `
     <h2>🍸 カシスパイン</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カシス 30-45ml</p>
+        <p>パイナップルジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -273,10 +351,8 @@ function showCassisPine(){
 function showCassisGrape(){
     content.innerHTML = `
     <h2>🍸 カシスグレープフルーツ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カシス 30-45ml</p>
+        <p>グレープフルーツジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -340,10 +416,8 @@ function showGin(){
 function showGinTonic(){
     content.innerHTML = `
     <h2>🍸 ジントニック</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ジン 30ml-45ml</p>
+        <p>トニックウォーター 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -354,10 +428,9 @@ function showGinTonic(){
 function showGinBack(){
     content.innerHTML = `
     <h2>🍸 ジンバック</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ジン 30-45ml</p>
+        <p>レモンジュース 15-30ml</p>
+        <p>ジンジャーエール 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -368,10 +441,9 @@ function showGinBack(){
 function showGinRicky(){
     content.innerHTML = `
     <h2>🍸 ジンリッキー</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ジン 45ml</p>
+        <p>トニックウォーター（炭酸水) 適量</p>
+        <p>ライム 1/2個</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -382,10 +454,8 @@ function showGinRicky(){
 function showMartini(){
     content.innerHTML = `
     <h2>🍸 マティーニ</h2>
-        <p>ジン 50ml</p>
-        <p>ベルモット 10ml</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ジン 45-60ml</p>
+        <p>ベルモット 10-15ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -454,10 +524,8 @@ function showVodka(){
 function showVodkaTonic(){
     content.innerHTML = `
     <h2>🍸 ウォッカトニック</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ウォッカ 30-45ml</p>
+        <p>トニックウォーター（炭酸水) 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -468,10 +536,9 @@ function showVodkaTonic(){
 function showMoscowMule(){
     content.innerHTML = `
     <h2>🍸 モスコミュール</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ウォッカ 45ml</p>
+        <p>ジンジャーエール 90ml</p>
+        <p>ライムがあれぱ軽く絞る</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -482,10 +549,8 @@ function showMoscowMule(){
 function showBloodyMary(){
     content.innerHTML = `
     <h2>🍸 ブルドック</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ウォッカ 30-45ml</p>
+        <p>グレープフルーツジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -496,10 +561,8 @@ function showBloodyMary(){
 function showScrewdriver(){
     content.innerHTML = `
     <h2>🍸 スクリュードライバー</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ウォッカ 45ml</p>
+        <p>オレンジジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -510,10 +573,10 @@ function showScrewdriver(){
 function showSexOnTheBeach(){
     content.innerHTML = `
     <h2>🍸 Sex on the Beach</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>ウォッカ 15ml</p>
+        <p>メロン・リキュール 20ml</p>
+        <p>フランボワーズ 10ml</p>
+        <p>パイナップルジュース 80ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -574,10 +637,8 @@ function showCampari(){
 function showCampariOrange(){
     content.innerHTML = `
     <h2>🍸 カンパリオレンジ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カンパリ 45ml</p>
+        <p>オレンジジュース 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -588,10 +649,8 @@ function showCampariOrange(){
 function showCampariSoda(){
     content.innerHTML = `
     <h2>🍸 カンパリソーダ</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カンパリ 40-45ml</p>
+        <p>トニックウォーター（炭酸水) 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -602,10 +661,8 @@ function showCampariSoda(){
 function showCampariTonic(){
     content.innerHTML = `
     <h2>🍸 カンパリトニック</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カンパリ 30ml</p>
+        <p>トニックウォーター 90ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -616,10 +673,9 @@ function showCampariTonic(){
 function showSupumoni(){
     content.innerHTML = `
     <h2>🍸 スプモーニー</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カンパリ 20-30ml</p>
+        <p>グレープフルーツジュース 30-45ml</p>
+        <p>トニックウォーター（炭酸水) 適量</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
@@ -672,10 +728,8 @@ function showOther(){
 function showKahluaMilk(){
     content.innerHTML = `
     <h2>🍸 カルアミルク</h2>
-        <p>-- 30ml</p>
-        <p>---</p>
-        <p>---</p>
-        <p>---</p>
+        <p>カルーア 30ml</p>
+        <p>牛乳 90-120ml</p>
     <button id="back">← 戻る</button>
     `;
     const backButton = document.getElementById("back");
