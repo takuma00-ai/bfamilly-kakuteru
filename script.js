@@ -26,6 +26,17 @@ search.addEventListener("input",function(){
     document.getElementById(`card${i}`).addEventListener("click", function () {
         result[i].action();
     });
+
+
+    for (let i = 0; i < result.length; i++) {
+
+    console.log(document.getElementById(`card${i}`));
+
+    document.getElementById(`card${i}`).addEventListener("click", function () {
+        console.log("クリックされた");
+        result[i].action();
+    });
+}
 }
 
 });
