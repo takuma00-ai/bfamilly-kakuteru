@@ -43,16 +43,23 @@ button{
 
     padding:15px 20px;
 
-    font-size:18px;
+    font-size:15px;
+
+    border:none;
+    border-radius:40px;
 
     background:white;
     box-shadow:0 4px 12px rgba(0,0,0,.15);
 
     transition:.25s;
-
+}
+#search:focus{
+    outline:none;
+    box-shadow:0 0 0 4px rgba(127,200,255,.4);
+    transform:scale(1.02);
 }
 
-#cocktail-card{
+.cocktail-card{
     /* 縦並び*/
     display:flex;
     flex-direction:column;
