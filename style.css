@@ -35,6 +35,23 @@ button{
     box-shadow:0 4px 8px rgba(0,0,0,0.2);
 }
 
+#search{
+    display:block;
+    width:70%;
+    max-width:500px;
+    margin:20px auto;
+
+    padding:15px 20px;
+
+    font-size:18px;
+
+    background:white;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+    transition:.25s;
+
+}
+
 #cocktail-card{
     /* 縦並び*/
     display:flex;
